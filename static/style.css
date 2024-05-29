@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: teal;
+  margin: 20px;
+}
+.container {
+  width: 1200px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+h2 {
+  margin-bottom: 20px;
+}
+.art ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-auto-rows: minmax(100px, auto);
+  gap: 50px;
+}
+.art ul li {
+  list-style: decimal;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+.art ul li h3 {
+  background-color: rgb(0, 255, 170);
+  color: black;
+  padding: 5px;
+}
+.art ul li h4 {
+  padding: 5px;
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
+}
+.art ul li p {
+  background-color: wheat;
+  padding: 7px;
+}
+.art ul li small {
+  color: #5a0000;
+  font-weight: bold;
+}
