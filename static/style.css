@@ -8,7 +8,6 @@
 
 body {
   background-color: teal;
-  margin: 20px;
 }
 .container {
   width: 1200px;
@@ -20,11 +19,34 @@ h1 {
   margin-bottom: 50px;
 }
 h2 {
-  margin-bottom: 20px;
+  margin: 20px;
+}
+
+.navbar {
+  background-color: white;
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav_logo img {
+  width: 60px;
+}
+.nav_links ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.nav_links ul a,
+.nav_links ul i {
+  font-size: 18px;
+  color: black;
 }
 .art ul {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(100px, auto);
   gap: 50px;
 }
@@ -51,4 +73,31 @@ h2 {
 .art ul li small {
   color: #5a0000;
   font-weight: bold;
+}
+.register_form {
+  text-align: center;
+}
+.register_form p {
+  margin: 10px 0;
+}
+.register_form p label {
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.register_form p input {
+  padding: 0 5px;
+  outline: none;
+  width: 300px;
+  height: 36px;
+}
+.register_btn {
+  padding: 15px 30px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
 }

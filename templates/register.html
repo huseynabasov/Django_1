@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title_page %}
+    Register Page
+{% endblock title_page %}
+
+
+{% block body %}
+    <h2>Register Page</h2>
+
+    <form class="register_form" method="post">
+        {% csrf_token %} 
+        {{form.as_p}}
+
+        <button class="register_btn"> Qeydiyyatdan kec </button>
+    </form>
+{% endblock body %}
+
