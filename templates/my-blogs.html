@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title_page %}
+    My blogs
+{% endblock title_page %}
+
+
+{% block body %}
+    <h2>Menim meqalelerim</h2>
+    <div class="container">
+        <div class="art"> 
+            <h2>Articles:</h2>
+            <ul>
+                {% for article in articles %}
+                    <li>
+                        <h3> {{article.author}} </h3>
+                        <h4> {{article.title}} </h4>
+                        <p> {{article.content}} </p>
+                        <small> {{article.created_date}} </small> 
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock body %}
+
+
+    

@@ -10,7 +10,19 @@
 
     <form class="register_form" method="post">
         {% csrf_token %} 
-        {{form.as_p}}
+        
+        <div class="form-group">
+            <label for="{{form.username.id_for_label}}">Istifadeci adi</label>
+            {{form.username}}
+        </div>
+        <div class="form-group">
+            <label for="{{form.password.id_for_label}}">Sifre</label>
+            {{form.password}}
+        </div>
+        <div class="form-group">
+            <label for="{{form.confirm.id_for_label}}">Sifreni tekrarla</label>
+            {{form.confirm}}
+        </div>
 
         <button class="register_btn"> Qeydiyyatdan kec </button>
     </form>

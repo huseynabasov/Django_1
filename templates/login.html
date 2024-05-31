@@ -9,8 +9,16 @@
     <h2>Login Page</h2> 
     <form class="register_form" method="post">
         {% csrf_token %} 
-        {{form.as_p}}
-    
+        
+        <div class="form-group">
+            <label for="{{form.username.id_for_label}}">Istifadeci adi</label>
+            {{form.username}}
+        </div>
+        <div class="form-group">
+            <label for="{{form.password.id_for_label}}">Sifre</label>
+            {{form.password}}
+        </div>
+
         <button class="register_btn"> Daxil ol </button>
     </form>
 {% endblock body %}

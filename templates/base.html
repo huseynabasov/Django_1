@@ -23,16 +23,29 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
-                <li><a href="{% url 'account:login' %}">Login</a></li>
-                <li><a href="{% url 'account:register' %}">Register</a></li>
-                <li><a href="{% url 'account:logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                {% if request.user.is_authenticated %}
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Meqaleler<i class="fa-solid fa-chevron-down"></i></button>
+                            <div class="dropdown-content">
+                              <a href="{% url 'our-blogs' %}">Butun meqaleler</a>
+                              <a href="{% url 'my-blogs' %}">Meqalelerim</a> 
+                            </div>
+                          </div>
+                    </li>
+                    <li><a href="{% url 'account:logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                {% else %}
+                    <li><a href="{% url 'account:login' %}">Login</a></li>
+                    <li><a href="{% url 'account:register' %}">Register</a></li>
+                    
+                {% endif %}  
             </ul>
         </div>
     </div>
    </div>
     {% block body %}
     <h1>Salam</h1>
-
+    
     {% endblock body %}
 
 
