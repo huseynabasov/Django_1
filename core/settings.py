@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     #My_Apps
     'account',
     'article',
+    'ckeditor',
+    'django_cleanup',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -120,9 +123,21 @@ USE_TZ = True
 
 STATIC_URL = 'static/' 
 STATICFILES_DIRS = [BASE_DIR / 'static'] 
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# Media files (Uploaded by users)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CKEDITOR_CONFIGS = {
+    'default': { 
+        'height': 300,
+        "removePlugins": "stylesheetparser",
+    },
+}
+CKEDITOR_UPLOAD_PATH = "uploads/"

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title_page %}
+    Meqele elave et
+{% endblock title_page %}
+
+
+{% block body %}
+    <h2>Meqele meqaleni guncellet</h2>
+
+    <form method="post" class="register_form" enctype="multipart/form-data"> 
+        {% csrf_token %}
+        {{form.media}}
+        <div class="form-group">
+            <label for="{{form.title.id_for_label}}">Basliq</label>
+            {{form.title}}
+        </div>
+        <div class="form-group">
+            <label for="{{form.content.id_for_label}}">Mezmun</label>
+            {{form.content}}
+        </div>
+        <div class="form-group">
+            <label for="{{form.image.id_for_label}}">Sekil</label>
+            {{form.image}}
+        </div>  
+
+        <button class="register_btn">Guncelle</button>
+    </form>
+{% endblock body %}
+

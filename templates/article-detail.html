@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title_page %}
+My blogs
+{% endblock title_page %}
+
+
+{% block body %} 
+<div class="container">
+    <div class="art-detail">
+        <h2>Articles:</h2>
+        <ul>
+            <li> 
+                <h4> {{article.title}} </h4>
+                <p> {{article.content|safe}} </p>
+                <small> {{article.created_date}} </small>
+                {% if article.image %}
+                    <img src="{{ article.image.url}}" alt="">
+                {% endif %}
+                
+            </li>
+        </ul>
+    </div>
+
+    <div class="comments">
+        <h2>Serhler</h2>
+        <br>
+        <hr>
+        <br>
+        {% if comments %}
+            {% for comment in comments %}
+                <div class="comment">
+                    <h4>{{comment.comment_author}} terefinden yazildi</h4>
+                    <p>{{comment.comment_content}}</p>
+                </div>
+                <br>
+                <hr>
+                <br>
+            {% endfor %}
+        {% else %}
+        {% endif %}
+    </div>
+
+    <div class="comment_form">
+        <form action="{% url 'comment' article.id %}" method="post" class="register_form">
+        {% csrf_token %}
+            <div class="form-group">
+                <label for="comment_author">Ad</label>
+                <input type="text" name="comment_author" placeholder="Adinizi daxil edin..." id="comment_author">
+            </div>
+            <div class="form-group">
+                <label for="comment_content">Serhiniz</label>
+                <textarea rows="10" cols="50" type="text" name="comment_content" placeholder="Serhinizi daxil edin..." id="comment_content"></textarea>
+            </div>
+
+            <button type="submit" class="register_btn">Gonder</button>
+        </form>
+    </div>
+</div>
+{% endblock body %}

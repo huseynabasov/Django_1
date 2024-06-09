@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title_page %}
+    My blogs
+{% endblock title_page %}
+
+
+{% block body %}
+    <h2>Butun meqaleler</h2>
+
+{% if articles %}
+<div class="search_form">
+        <form class="register_form">
+            {% csrf_token %}
+            <div class="form-group">
+                <input name="keyword" type="text" placeholder="Axtar...">
+                <button class="register_btn" type="submit">Axtar</button>
+            </div>
+        </form>
+    </div>
+{% else %}
+<div class="alert_warning">
+    <p>Meqele yoxdur......</p>
+</div>
+{% endif %}
+ 
+
+    <div class="container">
+        <div class="art"> 
+            <h2>Articles:</h2>
+            <ul>
+                {% for article in articles %}
+                    <li>
+                        <h3> {{article.author}} </h3>
+                        <h4> <a href="{% url 'article-detail' article.id %}">{{article.title}}</a> </h4>
+                        <p> {{article.content|safe|truncatechars:30}} </p>
+                        <small> {{article.created_date}} </small> 
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock body %}
+
+
+    
