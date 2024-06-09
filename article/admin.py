@@ -6,7 +6,7 @@ from .models import Article, Comment
 admin.site.register(Article)  
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ["title", "author","content"]
+    list_display = ["title", "author"]
     list_display_links = ["title", "author"]
     list_filter = ["created_date"]
     search_fields = ["title"]
